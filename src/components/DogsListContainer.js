@@ -23,8 +23,8 @@ class DogsListContainer extends Component {
     render() {
     return (
       <div className="dogs-list">
-        <h1>Dogs List</h1>
-        <DogsList/>
+        <h1>Dogs List</h1>        
+        <DogsList dogBreeds = {this.props.dogBreeds}/>
       </div>
     )
   }
@@ -32,7 +32,7 @@ class DogsListContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        state
+        dogBreeds: state
     }
 }
 
