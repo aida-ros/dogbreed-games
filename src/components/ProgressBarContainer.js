@@ -30,5 +30,6 @@ export default class ProgressBarContainer extends Component {
 }
 
 // mapStateToProps = (state) => {
+// feature/game1-images
 //     return state
 // }
