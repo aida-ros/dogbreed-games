@@ -11,7 +11,10 @@ export default class ProgressBarContainer extends Component {
     // Selected option is coming from an 'onSubmit' or 'onClick' event    
     checkAnswer = (selectedOption) => {
         if (selectedOption === true) {
-            return this.setState(this.state.correct++)
+            const actionTrue = {
+                type: 'CHECK_ANSWER',
+                payload: true
+            }
         }
         this.setState(this.state.total++)
         console.log("CORRECT:", this.state.correct, "TOTAL:", this.state.total)
