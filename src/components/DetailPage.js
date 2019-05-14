@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom'
 import './DetailPage.css'
 
 export default class Detailpage extends Component {
-  shuffle = (array) => {
-    array.sort(() => Math.random() - 0.5);
-  }
-
 
   render() { 
     const dogImages  = this.props.dogImages

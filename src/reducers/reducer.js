@@ -27,7 +27,7 @@ const reducer = (state = initialState, action) => {
                ...state, 
                dogRandomImage: action.payload
             }
-        case 'CHECK_ANSWER':
+        case 'ANSWERS':
             return {
                 ...state,
                 answers: action.payload
