@@ -8,7 +8,7 @@ class DogsListContainer extends Component {
         request
           .get('https://dog.ceo/api/breeds/list/all')
           .then(response => {
-            console.log(response)
+            // console.log(response)
             const dogData = Object.keys(response.body.message)
                 this.props.dispatch({
                 type: 'SHOW_DOG_BREED',
@@ -21,8 +21,7 @@ class DogsListContainer extends Component {
 
     render() {
     return (
-      <div className="dogs-list">
-        <h1>Dogs List</h1>        
+      <div className="dogs-list">        
         <DogsList dogBreeds = {this.props.dogBreeds}/>
       </div>
     )
