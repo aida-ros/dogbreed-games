@@ -12,7 +12,7 @@ export default class Detailpage extends Component {
       
 
 
-        { dogImages && this.props.dogImages.map(url => url.map(image => <img key={image} src= { image } alt = "Dog"/>)) }
+        { dogImages && this.props.dogImages.map(url => <img key={url} src= { url } alt = "Dog"/>) }
         { !dogImages && 'Loading...'}
       </div>
     )
