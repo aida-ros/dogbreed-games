@@ -8,7 +8,7 @@ class DogsListContainer extends Component {
         request
           .get('https://dog.ceo/api/breeds/list/all')
           .then(response => {
-            console.log(response)
+            console.log("HI",response)
             const dogData = Object.keys(response.body.message)
                 this.props.dispatch({
                 type: 'SHOW_DOG_BREED',
@@ -23,15 +23,17 @@ class DogsListContainer extends Component {
     return (
       <div className="dogs-list">
         <h1>Dogs List</h1>        
-        <DogsList dogBreeds = {this.props.dogBreeds}/>
+         <DogsList dogBreeds = {this.props.dogBreeds}/> 
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-    return {
-        dogBreeds: state
+  console.log(state.dogBreeds)  
+  return {
+      dogBreeds: state.dogBreeds,
+      dogImages: state.dogImages
     }
 }
 

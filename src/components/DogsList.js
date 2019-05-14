@@ -9,12 +9,15 @@ export default class DogsList extends Component {
     return (
       <div>
         <ul>
-          { dogBreeds.map(dogbreed => dogbreed.map(breed=> 
-          <li key={breed}>
-            <Link to={ `/detailpage/${breed}` }>{breed}</Link>
-          </li>) )}
+        { dogBreeds.map(dogbreed => 
+            <li key={dogbreed}>
+            <Link to={ `/detailpage/${dogbreed}` }>{dogbreed}</Link>
+            </li> )}
         </ul>
       </div>
     )
   }
 }
+
+
+

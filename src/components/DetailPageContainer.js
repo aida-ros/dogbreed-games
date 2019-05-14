@@ -11,7 +11,7 @@ class DetailPageContainer extends Component {
         request
           .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images`)
           .then(response => {
-           
+           console.log("lkjhgfd", response.body.message)
             this.props.dispatch({
               type: 'SHOW_DOG_IMAGES',
               payload: response.body.message})
@@ -27,7 +27,7 @@ class DetailPageContainer extends Component {
         return (
         <div>
              This page will show images of a specific dog { this.props.match.params.breed }
-              <DetailPage dogImages={ this.props.dogImages } />
+              <DetailPage dogImages={ this.props.dogImages } /> 
           
         </div>
       )}
@@ -36,9 +36,11 @@ class DetailPageContainer extends Component {
 
 
 const mapStateToProps = (state) => {
+  console.log(state.dogBreeds)  
   return {
-      dogImages: state
-  }
+      dogBreeds: state.dogBreeds,
+      dogImages: state.dogImages
+    }
 }
 
 export default connect(mapStateToProps)(DetailPageContainer)
