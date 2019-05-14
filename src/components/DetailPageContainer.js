@@ -11,7 +11,6 @@ class DetailPageContainer extends Component {
         request
           .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images`)
           .then(response => {
-           console.log("lkjhgfd", response.body.message)
             this.props.dispatch({
               type: 'SHOW_DOG_IMAGES',
               payload: response.body.message})

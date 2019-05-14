@@ -8,7 +8,7 @@ class Game1Container extends Component {
       .get('https://dog.ceo/api/breeds/image/random')
       .then(response => {
         console.log(response.body.message)
-        const randomDogImg = Object.keys(response.body.message)
+        const randomDogImg = response.body.message
           this.props.dispatch({
           type: 'SHOW_RANDOM_IMAGE',
           payload: randomDogImg
@@ -17,11 +17,11 @@ class Game1Container extends Component {
       .catch(console.error)
   }
 
-  render() {
+  render() { 
     return (
       <div>
         
-        <img src="" alt="random"></img>
+        <img src={this.props.dogRandomImage}/>
        
       <p>What is the breed of the image above?</p>
       <ul>
@@ -35,8 +35,10 @@ class Game1Container extends Component {
 }
 
 const mapStateToProps = (state) => {
+
   return {
-      dogRandomImage: state
+    dogRandomImage: state.dogRandomImage
+      
   }
 }
 

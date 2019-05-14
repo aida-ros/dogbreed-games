@@ -3,6 +3,7 @@ const initialState = {
     dogBreeds: [],
     dogImages: [],
     dogRandomImage: [],
+    dogThreeRandomImages: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -22,9 +23,20 @@ const reducer = (state = initialState, action) => {
             }
         }
         case 'SHOW_RANDOM_IMAGE':
+            
            return  {
+
                ...state, 
                dogRandomImage: action.payload
+
+            }
+        case 'SHOW_THREE_RANDOM_IMAGES':
+            
+           return  {
+
+               ...state, 
+               dogThreeRandomImages: action.payload
+
             }
         default:
             return state

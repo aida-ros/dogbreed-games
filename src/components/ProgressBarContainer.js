@@ -26,6 +26,3 @@ export default class ProgressBarContainer extends Component {
     }
 }
 
-mapStateToProps = (state) => {
-
-}
