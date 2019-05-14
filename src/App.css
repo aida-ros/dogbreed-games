@@ -3,7 +3,9 @@ html {
 }
 
 .App {
-  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;  
 }
 
 .App-logo {
@@ -36,6 +38,22 @@ html {
   }
 }
 
+h1 {
+  font-family: 'Just Another Hand', cursive;
+  letter-spacing: 1px;
+  font-size: 60px;
+}
+
+label, p, a {
+  line-height: 30px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 20px;
+}
+
+a:hover{
+  color: #ffffff;
+}
+
 button {
   width: 150px;
   height: 80px;
@@ -45,4 +63,33 @@ button {
   padding: 20px;
   margin: 15px;
   margin-top: 20px;
+  outline: none;
+}
+
+button:hover {
+  color: #ffffff;
+  background-color: rgb(97, 199, 230);
+  border: 1px solid rgb(24, 104, 104);
+}
+
+button:active {
+  color: #ffffff;
+  background-color: rgb(97, 199, 230);
+  border: 1px solid rgb(24, 104, 104);
+}
+
+button:focus {
+  color: #ffffff;
+  background-color: rgb(97, 199, 230);
+  border: 1px solid rgb(24, 104, 104);
+}
+
+button.home {
+  color: #ffffff;
+  background-color: #282c34;
+}
+
+button.home:hover {
+  color: #282c34;
+  background-color: #ffffff;
 }

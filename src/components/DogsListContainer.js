@@ -21,8 +21,7 @@ class DogsListContainer extends Component {
 
     render() {
     return (
-      <div className="dogs-list">
-        <h1>Dogs List</h1>        
+      <div className="dogs-list">       
          <DogsList dogBreeds = {this.props.dogBreeds}/> 
       </div>
     )

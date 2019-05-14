@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
             }
         }
         case 'SHOW_DOG_IMAGES': {
-            //console.log("b", action.payload)
+            console.log("State", state)
             return {
                 ...state, 
                 dogImages: action.payload
