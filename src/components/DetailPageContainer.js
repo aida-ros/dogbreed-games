@@ -1,42 +1,47 @@
 import React, { Component } from 'react'
+import DetailPage from './DetailPage'
+import * as request from 'superagent'
+import { connect } from 'react-redux'
 
-export default class DetailPageContainer extends Component {
+class DetailPageContainer extends Component {
     state = { images: null }
     componentDidMount() {
-        console.log(response)
+       
         const breed = this.props.match.params.breed
         request
           .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images`)
-          .then(response => this.updateImages(response.body.message))
+          .then(response => {
+           
+            this.props.dispatch({
+              type: 'SHOW_DOG_IMAGES',
+              payload: response.body.message})
+          })
+            
           .catch(console.error)
-      }
-      updateImages(images) {
-        this.setState({
-          images: images
-        })
+          
+          
     }
-  
-  
+
     render() {
     
         return (
         <div>
              This page will show images of a specific dog { this.props.match.params.breed }
-              <DogBreedImages images={ this.state.images } />
+              <DetailPage dogImages={ this.props.dogImages } />
           
         </div>
-      )
-  }
-
-      
-    
-   
-  
+      )}
 }
 
 
 
-  
+const mapStateToProps = (state) => {
+  return {
+      dogImages: state
+  }
+}
+
+export default connect(mapStateToProps)(DetailPageContainer)
 
   
   
