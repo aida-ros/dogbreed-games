@@ -3,7 +3,6 @@ import './App.css';
 import DogsListContainer from './components/DogsListContainer';
 import { Route } from 'react-router-dom'
 import DetailPageContainer from './components/DetailPageContainer';
-import GameTwo from './components/GameTwo'
 import Game1Container from './components/Game1Container';
 import ProgressBarContainer from './components/ProgressBarContainer';
 

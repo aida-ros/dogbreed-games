@@ -1,0 +1,11 @@
+img {
+    max-width: 500px;
+    padding: 10px;
+    margin: auto;
+    display: flex-box;
+}
+
+.index {
+    color: rgb(70, 150, 123);
+    text-decoration: underline;
+}

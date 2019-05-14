@@ -26,7 +26,7 @@ class DetailPageContainer extends Component {
     
         return (
         <div>
-             This page will show images of a specific dog { this.props.match.params.breed }
+             <h2>This page will show images of a(n) { this.props.match.params.breed }</h2>
               <DetailPage dogImages={ this.props.dogImages } /> 
           
         </div>
