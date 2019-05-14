@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import * as request from 'superagent'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import * as request from 'superagent';
+import { connect } from 'react-redux';
+import Game1 from './Game1';
 
 class Game1Container extends Component {
   componentDidMount() {
@@ -8,7 +9,7 @@ class Game1Container extends Component {
       .get('https://dog.ceo/api/breeds/image/random')
       .then(response => {
         console.log(response.body.message)
-        const randomDogImg = Object.keys(response.body.message)
+        const randomDogImg = response.body.message
           this.props.dispatch({
           type: 'SHOW_RANDOM_IMAGE',
           payload: randomDogImg
@@ -17,26 +18,23 @@ class Game1Container extends Component {
       .catch(console.error)
   }
 
+  // const urlSplit = this.props.dogRandomImage; 
+  // const dogName = urlSplit.split('/')[3]
+
   render() {
     return (
-      <div>
-        
-        <img src="" alt="random"></img>
-       
-      <p>What is the breed of the image above?</p>
-      <ul>
-        <li>A: Breed X</li>
-        <li>B: Breed Y</li>
-        <li>C: Breed Z</li>
-      </ul>
-      </div>
-    )
-  }
+    <div>
+         <p>Question Time!</p> 
+          <Game1 /> 
+          <br />
+          <img src={this.props.dogRandomImage} alt="random"></img>     
+    </div>
+  )}
 }
 
 const mapStateToProps = (state) => {
   return {
-      dogRandomImage: state
+      dogRandomImage: state.dogRandomImage
   }
 }
 
