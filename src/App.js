@@ -24,7 +24,6 @@ function App() {
      <Route path="/detailpage/:breed" component={DetailPageContainer} /> 
      <Route exact path="/game1/" component={Game1Container} />
      <Route exact path="/game2/" component={Game2Container} />
-     {/* <Route exact path="/game3/" component={Game3Container} /> */}
 
     </div>
   );
