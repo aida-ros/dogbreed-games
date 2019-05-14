@@ -15,4 +15,4 @@ export default class GameTwo extends Component {
 
 
 
-(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images`)
+//(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images`)
