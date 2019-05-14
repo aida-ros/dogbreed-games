@@ -11,9 +11,9 @@ export default class ProgressBarContainer extends Component {
     // Selected option is coming from an 'onSubmit' or 'onClick' event    
     checkAnswer = (selectedOption) => {
         if (selectedOption === true) {
-            return this.state.correct++
+            return this.setState(this.state.correct++)
         }
-        this.state.total++
+        this.setState(this.state.total++)
         console.log("CORRECT:", this.state.correct, "TOTAL:", this.state.total)
     }
     
@@ -27,5 +27,6 @@ export default class ProgressBarContainer extends Component {
 }
 
 // mapStateToProps = (state) => {
-
+// feature/game1-images
+//     return state
 // }
