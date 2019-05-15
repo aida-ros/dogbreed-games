@@ -21,6 +21,11 @@ class Game2Container extends Component {
           type: 'SET_RANDOM_NUMBER',
           payload: randomNumber
          })
+
+          
+        console.log("HHHHHHHAAAAAAAA",this.getName())
+         
+       
       })
       .catch(console.error)
   }
@@ -29,12 +34,27 @@ class Game2Container extends Component {
     return Math.floor(Math.random() * 3)
   }
 
+  getName = (event) => {
+    const isCorrect = parseInt(event.target.id) === this.props.setRandomNumber
+
+    this.props.dispatch({
+      type: 'ANSWERS_GAME_TWO',
+      payload: isCorrect
+    })
+}
+
+
   render() { 
     
   console.log("HHHHHHH",this.props.setRandomNumber)
     return (
       <div>
-        <Game2 dogThreeRandomImages= {this.props.dogThreeRandomImages}  setRandomNumber = {this.props.setRandomNumber}/>
+        <Game2 
+        dogThreeRandomImages= {this.props.dogThreeRandomImages}  
+        setRandomNumber = {this.props.setRandomNumber}
+        getName = {this.getName}
+        answerGameTwo = {this.props.answerGameTwo} 
+        />
      </div>
     )
   }
@@ -44,8 +64,8 @@ const mapStateToProps = (state) => {
   
   return {
     dogThreeRandomImages: state.dogThreeRandomImages,
-    setRandomNumber: state.setRandomNumber
-
+    setRandomNumber: state.setRandomNumber,
+    answerGameTwo: state.answerGameTwo
   }
 }
 
