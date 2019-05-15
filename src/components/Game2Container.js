@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import * as request from 'superagent'
 import { connect } from 'react-redux'
 import Game2 from './Game2'
+import ProgressBarContainer from './ProgressBarContainer'
 
 class Game2Container extends Component {
   componentDidMount() {
@@ -55,6 +56,8 @@ class Game2Container extends Component {
         getName = {this.getName}
         answerGameTwo = {this.props.answerGameTwo} 
         />
+      
+        <ProgressBarContainer/>
      </div>
     )
   }

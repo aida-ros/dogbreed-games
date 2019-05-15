@@ -1,27 +1,24 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import * as request from 'superagent';
+import { connect } from 'react-redux';
 
-export default class Game1 extends Component {
+export class Game1 extends Component {
 
   checkAnswer = (event) => {
     if (event.target.name === this.props.dogRandomImage.breed){  
-      console.log("ANSWER WAS TRUE!")
-      const correct = {
-        type: 'ANSWERS',
-        payload: true
-      }
-      //this.props.dispatch(correct)
-      return true
+      return console.log("ANSWER WAS TRUE!")
+      // return this.props.dispatch({
+      //   type: 'ANSWERS',
+      //   payload: true
+      // })
     }
-
-    console.log("ANSWER WAS FALSE!")
-    const wrong = {
-      type: 'ANSWERS',
-      payload: false
-    }
-    //this.props.dispatch(wrong)
-    return false
+    
+    return console.log("ANSWER WAS FALSE!")
+    // return this.props.dispatch({
+    //   type: 'ANSWERS',
+    //   payload: false
+    // })
   }
 
   render() {
@@ -46,7 +43,7 @@ export default class Game1 extends Component {
         </div>
 
         <div>
-          <input  type="radio" id="false" name={randomBreeds && randomBreeds[1]} value="Option C" />
+          <input onClick={this.checkAnswer} type="radio" id="false" name={randomBreeds && randomBreeds[1]} value="Option C" />
           <label for="Option C">{randomBreeds && randomBreeds[1]}</label>
         </div>
         <br />
@@ -63,3 +60,10 @@ export default class Game1 extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    answers: state.answers
+  }
+}
+
+export default connect(mapStateToProps)(Game1)

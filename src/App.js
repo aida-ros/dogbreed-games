@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
      {/* In progress... */}
-     <ProgressBarContainer/>
+     
 
      <Link to="/"><button className="home">HOME</button></Link>
      <Link to="/Game1/"><button className="game-one">GAME 1</button></Link>
