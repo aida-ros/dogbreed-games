@@ -47,7 +47,7 @@ const reducer = (state = initialState, action) => {
         case 'ANSWERS':
             return {
                 ...state,
-                answers: action.payload
+                answers: [...action.payload]
             }
         case 'SET_RANDOM_NUMBER':
        // console.log("aaaaaa", action.payload)
