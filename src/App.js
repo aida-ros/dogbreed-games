@@ -9,6 +9,7 @@ import Game2Container from './components/Game2Container'
 import ProgressBarContainer from './components/ProgressBarContainer';
 import { Link } from 'react-router-dom'
 
+
 function App() {
   return (
     <div className="App">
@@ -24,7 +25,7 @@ function App() {
      <Route path="/detailpage/:breed" component={DetailPageContainer} /> 
      <Route exact path="/game1/" component={Game1Container} />
      <Route exact path="/game2/" component={Game2Container} />
-
+     
     </div>
   );
 }
