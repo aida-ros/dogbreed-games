@@ -9,35 +9,45 @@ class Game1Container extends Component {
     request
       .get('https://dog.ceo/api/breeds/image/random')
       .then(response => {
-        console.log("BODY:", response.body)
-        const randomDogImg = response.body.message
-          this.props.dispatch({
+        const url = response.body.message
+        const breedName = url.toString().split('/')[4]
+        this.props.dispatch({
           type: 'SHOW_RANDOM_IMAGE',
           payload: {
-            image: randomDogImg,
-            id: 'correct'
+            url: url,
+            breed: breedName
           }
-        })
+          })
       })
       .catch(console.error)
+
+      request
+    .get('https://dog.ceo/api/breeds/list/all')
+    .then(response => {
+      const breeds = Object.keys(response.body.message)
+      const random = () => Math.floor(Math.random() * 86)  
+      this.props.dispatch({
+        type: 'TWO_RANDOM_BREEDS',
+        payload: [breeds[random()], breeds[random()]]
+      })
+    })
+    .catch(console.error)
   }
   
   render() {
     
-      // const urlSplit = this.props.dogRandomImage; 
-      // const dogName = urlSplit.split('/')[3]
-      // console.log(dogName)
     return (
     <div>
-          <Game1 dogRandomImage={this.props.dogRandomImage}/> 
+          
+          <Game1 dogRandomImage={this.props.dogRandomImage} randomBreeds={this.props.randomBreeds}/> 
     </div>
   )}
 }
 
 const mapStateToProps = (state) => {
-  console.log("STATE", state.dogRandomImage)
   return {
-      dogRandomImage: state.dogRandomImage
+      dogRandomImage: state.dogRandomImage,
+      randomBreeds: state.randomBreeds
   }
 }
 

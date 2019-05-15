@@ -8,7 +8,7 @@ export default class ProgressBar extends Component {
     }
     
     render() {
-        console.log("PERCENTAGE:", this.props.percentage)
+        // console.log("PERCENTAGE:", this.props.percentage)
         return(
             <div className="statistics-container">
             <h1>Success Rate: </h1>

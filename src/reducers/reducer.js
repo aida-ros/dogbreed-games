@@ -18,7 +18,6 @@ const reducer = (state = initialState, action) => {
             }
         }
         case 'SHOW_DOG_IMAGES': {
-            //console.log("State", state)
             return {
                 ...state, 
                 dogImages: action.payload
@@ -31,6 +30,11 @@ const reducer = (state = initialState, action) => {
                ...state, 
                dogRandomImage: action.payload
 
+            }
+        case 'TWO_RANDOM_BREEDS':
+            return {
+                ...state,
+                randomBreeds: action.payload
             }
         case 'SHOW_THREE_RANDOM_IMAGES':
         //console.log("BLUU", action.payload)

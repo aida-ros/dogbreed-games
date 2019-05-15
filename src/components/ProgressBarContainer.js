@@ -22,7 +22,7 @@ export default class ProgressBarContainer extends Component {
     
     render () {
         const successRate = (this.state.correct / this.state.total) * 100
-        console.log("RENDER IN CONTAINER:", successRate, '%')
+        // console.log("RENDER IN CONTAINER:", successRate, '%')
         return (
         <ProgressBar percentage={this.successRate}/>
          )
