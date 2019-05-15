@@ -5,6 +5,7 @@ const initialState = {
     dogRandomImage: [],
     answers: [],
     dogThreeRandomImages: [],
+    setRandomNumber: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -17,14 +18,13 @@ const reducer = (state = initialState, action) => {
             }
         }
         case 'SHOW_DOG_IMAGES': {
-            // console.log("State", state)
             return {
                 ...state, 
                 dogImages: action.payload
             }
         }
         case 'SHOW_RANDOM_IMAGE':
-            
+        
            return  {
 
                ...state, 
@@ -37,7 +37,7 @@ const reducer = (state = initialState, action) => {
                 randomBreeds: action.payload
             }
         case 'SHOW_THREE_RANDOM_IMAGES':
-            
+        //console.log("BLUU", action.payload)
            return  {
 
                ...state, 
@@ -48,6 +48,12 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 answers: action.payload
+            }
+        case 'SET_RANDOM_NUMBER':
+       // console.log("aaaaaa", action.payload)
+            return {
+                ...state,
+                setRandomNumber: action.payload
             }
         default:
             return state
