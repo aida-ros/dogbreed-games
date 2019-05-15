@@ -6,6 +6,7 @@ const initialState = {
     answers: [],
     dogThreeRandomImages: [],
     setRandomNumber: [],
+    answerGameTwo: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -44,16 +45,21 @@ const reducer = (state = initialState, action) => {
                dogThreeRandomImages: action.payload
 
             }
-        case 'ANSWERS':
+        case 'ANSWERS_GAME_TWO':
             return {
                 ...state,
-                answers: [...action.payload]
+                answerGameTwo: action.payload
             }
         case 'SET_RANDOM_NUMBER':
        // console.log("aaaaaa", action.payload)
             return {
                 ...state,
                 setRandomNumber: action.payload
+            }
+        case 'ANSWERS':
+            return {
+                ...state,
+                answers: action.payload
             }
         default:
             return state
