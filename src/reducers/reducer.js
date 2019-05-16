@@ -53,7 +53,7 @@ const reducer = (state = initialState, action) => {
         case 'ANSWERS':
             return {
                 ...state,
-                answers: action.payload
+                answers: [action.payload]
             }
         case 'SHOW_RIGHT_IMAGE':
             return {
