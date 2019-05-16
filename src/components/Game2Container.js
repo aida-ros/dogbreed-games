@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import * as request from 'superagent'
 import { connect } from 'react-redux'
 import Game2 from './Game2'
+import ProgressBarContainer from './ProgressBarContainer'
 
 class Game2Container extends Component {
   componentDidMount() {
@@ -29,18 +30,18 @@ class Game2Container extends Component {
         type: 'SHOW_RIGHT_IMAGE',
         payload: this.props.dogThreeRandomImages[this.props.setRandomNumber]
       })
-
-      }) 
       setTimeout(this.removeAnswer, 2000)  
       setTimeout(this.getToNextStage, 2000)     
     }
   }
+
   removeAnswer = () => {
     this.props.dispatch({
       type: 'SHOW_RIGHT_IMAGE',
       payload: []
     }) 
   }
+  
   getToNextStage = () => {
     request
       .get('https://dog.ceo/api/breeds/image/random/3')
@@ -75,6 +76,8 @@ class Game2Container extends Component {
           answers={this.props.answers}
           showRightImage={this.props.showRightImage}
         />
+
+       
       </div>
     )
   }

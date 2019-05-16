@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 
 export default class Game2 extends Component {
     
-    
   render() {
       const dogThreeRandomImages = this.props.dogThreeRandomImages
       const setRandomNumber = this.props.setRandomNumber

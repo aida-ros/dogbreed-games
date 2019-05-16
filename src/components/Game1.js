@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import * as request from 'superagent';
 import { connect } from 'react-redux';
 
 export class Game1 extends Component {
