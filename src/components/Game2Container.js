@@ -5,8 +5,7 @@ import Game2 from './Game2'
 
 class Game2Container extends Component {
   componentDidMount() {
-    this.getToNextStage()
-
+    this.getToNextStage()   
   }
 
   someRandomNumber = () => {
@@ -18,8 +17,9 @@ class Game2Container extends Component {
       this.props.dispatch({
         type: 'ANSWERS',
         payload: true
-      })
-      this.componentDidMount()
+      }) 
+      this.getToNextStage()
+
     } else {
       this.props.dispatch({
         type: 'ANSWERS',
@@ -29,9 +29,18 @@ class Game2Container extends Component {
         type: 'SHOW_RIGHT_IMAGE',
         payload: this.props.dogThreeRandomImages[this.props.setRandomNumber]
       })
+
+      }) 
+      setTimeout(this.removeAnswer, 2000)  
+      setTimeout(this.getToNextStage, 2000)     
     }
   }
-
+  removeAnswer = () => {
+    this.props.dispatch({
+      type: 'SHOW_RIGHT_IMAGE',
+      payload: []
+    }) 
+  }
   getToNextStage = () => {
     request
       .get('https://dog.ceo/api/breeds/image/random/3')
