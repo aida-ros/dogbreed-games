@@ -66,35 +66,19 @@ class Game1Container extends Component {
       payload: []
     }) 
   }
-  
-  randomize = (randomBreeds, correctBreed) => {
-    console.log("randomBreeds:",randomBreeds)
-    const allOptions = randomBreeds.concat(correctBreed)
-    console.log('allOptions:', allOptions)
-    
-    if (allOptions[2] !== undefined) {
-      const randomized = allOptions.sort(() => Math.random() - 0.5)
-      
-      return console.log("RANDOMIZED ARRAY: ", randomized)
-    }
-  }
+ 
 
   render() {
-   
+   console.log("BARK",this.props.randomBreeds)
     return (
     <div>
       <Game1 
       dogRandomImage={this.props.dogRandomImage} 
       randomBreeds={this.props.randomBreeds} 
       checkAnswer={this.checkAnswer}
-
-      showRightName={this.props.showRightName}/>
-
+      showRightName={this.props.showRightName}
       randomize={this.randomize}
       randomized={this.props.randomized}/>
-
-      
-
       <ProgressBarContainer/>
     </div>
   )}
@@ -105,10 +89,8 @@ const mapStateToProps = (state) => {
   return {
       dogRandomImage: state.dogRandomImage,
       randomBreeds: state.randomBreeds,
-
-      showRightName: state.showRightName
-
-      randomized: state.randomized
+      showRightName: state.showRightName,
+     
 
   }
 }

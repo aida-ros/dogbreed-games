@@ -4,27 +4,18 @@ import * as request from 'superagent';
 import { connect } from 'react-redux';
 
 export class Game1 extends Component {
-// componentWillMount = () => {
-
-// }
 
   render() {
+    const { randomBreeds } = this.props
+
+    if(randomBreeds === undefined) return 'Loading'
     
     const correctBreed = this.props.dogRandomImage.breed
-    const { randomBreeds } = this.props
     const checkAnswer = this.props.checkAnswer
-
     const showRightName = this.props.showRightName
-    //console.log('MIAAUW',showRightName)
-   
-
-    const randomizeOptions = this.props.randomize
-
-  {!randomBreeds && console.log('no')}
-  {randomBreeds && randomizeOptions(randomBreeds, correctBreed)} 
   
-
-
+    const dogs = [...randomBreeds, correctBreed].sort(() => Math.random() - 0.5)
+   
     return (
       <div>
 
@@ -35,26 +26,15 @@ export class Game1 extends Component {
           <img src={this.props.dogRandomImage.url} alt="random"></img>   
 
         
-
-        <div className='option'>
-          <input onClick={checkAnswer} type="radio" id="correct" name={correctBreed} value="Option A" />
-          <label >{correctBreed}</label>
-        </div>
-
-        <div className='option'>
-          <input onClick={checkAnswer} type="radio" id="false" name={randomBreeds && randomBreeds[0]} value="Option B" />
-          <label>{randomBreeds && randomBreeds[0]}</label>
-        </div>
-
-        <div className='option'>
-          <input onClick={checkAnswer} type="radio" id="false" name={randomBreeds && randomBreeds[1]} value="Option C" />
-          <label >{randomBreeds && randomBreeds[1]}</label>
-        </div>
-        <br />
-
-        
-        {/* <button onClick={this.checkAnswer}>Answer Question!</button> */}
-        {/* ^^^ Should dispatch an action or call a function dispatching an action*/}
+        { dogs.map(dog => {
+          return (
+              <div className='option'>
+                <input onClick={checkAnswer} type="radio" name={dog} value="Option A" />
+                <label >{dog}</label>
+              </div>
+            )
+        })}
+       
         
         <br/>
         <Link to="/">Go back to the index</Link>

@@ -5,6 +5,10 @@ import Game2 from './Game2'
 
 class Game2Container extends Component {
   componentDidMount() {
+    this.props.dispatch({
+      type: 'RESET_ANSWERS',
+      payload: []
+    }) 
     this.getToNextStage()   
   }
 
@@ -30,7 +34,7 @@ class Game2Container extends Component {
         payload: this.props.dogThreeRandomImages[this.props.setRandomNumber]
       })
 
-      }) 
+    
       setTimeout(this.removeAnswer, 2000)  
       setTimeout(this.getToNextStage, 2000)     
     }
@@ -81,7 +85,7 @@ class Game2Container extends Component {
 }
 
 const mapStateToProps = (state) => {
-
+  //console.log('FFFFF',state.answers )
   return {
     dogThreeRandomImages: state.dogThreeRandomImages,
     setRandomNumber: state.setRandomNumber,
