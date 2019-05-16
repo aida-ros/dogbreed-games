@@ -5,8 +5,11 @@ import Game1 from './Game1';
 import ProgressBarContainer from './ProgressBarContainer'
 
 class Game1Container extends Component {
-  componentDidMount() {
-    
+  componentDidMount  ()  {
+    this.getToNextStage()
+  }
+  
+  getToNextStage = () => { 
     request
       .get('https://dog.ceo/api/breeds/image/random')
       .then(response => {
@@ -34,44 +37,57 @@ class Game1Container extends Component {
     })
     .catch(console.error)
   }
-
+  
   checkAnswer = (event) => {
-    
     if (event.target.name === this.props.dogRandomImage.breed){  
-      // return console.log("ANSWER WAS TRUE!")
-      return this.props.dispatch({
+      this.props.dispatch({
         type: 'ANSWERS',
         payload: true
+      }) 
+      this.getToNextStage()
+    } else {
+      this.props.dispatch({
+        type: 'ANSWERS',
+        payload: false
       })
+       this.props.dispatch({
+        type: 'SHOW_RIGHT_NAME',
+        payload: this.props.dogRandomImage.breed
+       })      
+       setTimeout(this.removeAnswer, 2000) 
+       setTimeout(this.getToNextStage, 2000)
     }
     
-    // return console.log("ANSWER WAS FALSE!")
-    return this.props.dispatch({
-      type: 'ANSWERS',
-      payload: false
-    })
-    
-    
+  }
+  removeAnswer = () => {
+    this.props.dispatch({
+      type: 'SHOW_RIGHT_NAME',
+      payload: []
+    }) 
   }
   
   render() {
-    
+   
     return (
     <div>
       <Game1 
       dogRandomImage={this.props.dogRandomImage} 
       randomBreeds={this.props.randomBreeds} 
-      checkAnswer={this.checkAnswer}/>
+      checkAnswer={this.checkAnswer}
+      showRightName={this.props.showRightName}/>
       
+
       <ProgressBarContainer/>
     </div>
   )}
 }
 
 const mapStateToProps = (state) => {
+  console.log("WOEF",state.showRightName)
   return {
       dogRandomImage: state.dogRandomImage,
-      randomBreeds: state.randomBreeds
+      randomBreeds: state.randomBreeds,
+      showRightName: state.showRightName
   }
 }
 
