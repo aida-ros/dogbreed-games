@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as request from 'superagent';
 import { connect } from 'react-redux';
 import Game1 from './Game1';
-import ProgressBarContainer from './ProgressBarContainer'
 
 class Game1Container extends Component {
   componentDidMount  ()  {
@@ -68,19 +67,8 @@ class Game1Container extends Component {
     }) 
   }
   
-  randomize = (randomBreeds, correctBreed) => {
-    //console.log("randomBreeds:",randomBreeds)
-    const allOptions = randomBreeds.concat(correctBreed)
-    //console.log('allOptions:', allOptions)
-    
-    if (allOptions[2] !== undefined) {
-      const randomized = allOptions.sort(() => Math.random() - 0.5)
-      
-      // return console.log("RANDOMIZED ARRAY: ", randomized)
-    }
-  }
-
   render() {
+   console.log("BARK",this.props.randomBreeds)
     return (
     <div>
       <Game1 
@@ -89,9 +77,6 @@ class Game1Container extends Component {
       checkAnswer={this.checkAnswer}
       showRightName={this.props.showRightName}
       randomize={this.randomize}
-      randomized={this.props.randomized}/> 
-
-      
     </div>
   )}
 }
@@ -101,8 +86,7 @@ const mapStateToProps = (state) => {
   return {
       dogRandomImage: state.dogRandomImage,
       randomBreeds: state.randomBreeds,
-      showRightName: state.showRightName,
-      randomized: state.randomized
+      showRightName: state.showRightName
   }
 }
 
