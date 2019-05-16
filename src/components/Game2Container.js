@@ -6,6 +6,34 @@ import ProgressBarContainer from './ProgressBarContainer'
 
 class Game2Container extends Component {
   componentDidMount() {
+    this.getToNextStage()
+   
+  }
+  
+  someRandomNumber = () => {
+    return Math.floor(Math.random() * 3)
+  }
+
+  getName = (event) => {
+    if (parseInt(event.target.id) === this.props.setRandomNumber) {
+      this.props.dispatch({
+        type: 'ANSWERS',
+        payload: true
+      }) 
+      this.componentDidMount()
+    } else {
+      this.props.dispatch({
+        type: 'ANSWERS',
+        payload: false
+      })
+      this.props.dispatch({
+        type: 'SHOW_RIGHT_IMAGE',
+        payload: this.props.dogThreeRandomImages[this.props.setRandomNumber]
+      })      
+    }
+  }
+
+  getToNextStage = () => {
     request
       .get('https://dog.ceo/api/breeds/image/random/3')
       .then(response => {
@@ -22,32 +50,13 @@ class Game2Container extends Component {
           type: 'SET_RANDOM_NUMBER',
           payload: randomNumber
          })
-
-          
-        console.log("HHHHHHHAAAAAAAA",this.getName())
          
-       
       })
       .catch(console.error)
   }
-  
-  someRandomNumber = () => {
-    return Math.floor(Math.random() * 3)
-  }
-
-  getName = (event) => {
-    const isCorrect = parseInt(event.target.id) === this.props.setRandomNumber
-
-    this.props.dispatch({
-      type: 'ANSWERS_GAME_TWO',
-      payload: isCorrect
-    })
-}
-
 
   render() { 
     
-  console.log("HHHHHHH",this.props.setRandomNumber)
     return (
       <div>
         <Game2 
@@ -55,6 +64,8 @@ class Game2Container extends Component {
         setRandomNumber = {this.props.setRandomNumber}
         getName = {this.getName}
         answerGameTwo = {this.props.answerGameTwo} 
+        answers = {this.props.answers}
+        showRightImage = {this.props.showRightImage}
         />
       
         <ProgressBarContainer/>
@@ -64,15 +75,15 @@ class Game2Container extends Component {
 }
 
 const mapStateToProps = (state) => {
-  
+
   return {
     dogThreeRandomImages: state.dogThreeRandomImages,
     setRandomNumber: state.setRandomNumber,
-    answerGameTwo: state.answerGameTwo
+    answers: state.answers,
+    showRightImage: state.showRightImage
   }
 }
 
 export default connect(mapStateToProps)(Game2Container)
-
 
 
