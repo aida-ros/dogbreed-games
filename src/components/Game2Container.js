@@ -29,8 +29,7 @@ class Game2Container extends Component {
         type: 'SHOW_RIGHT_IMAGE',
         payload: this.props.dogThreeRandomImages[this.props.setRandomNumber]
       })
-
-      }) 
+ 
       setTimeout(this.removeAnswer, 2000)  
       setTimeout(this.getToNextStage, 2000)     
     }

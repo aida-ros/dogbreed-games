@@ -87,11 +87,11 @@ class Game1Container extends Component {
       dogRandomImage={this.props.dogRandomImage} 
       randomBreeds={this.props.randomBreeds} 
       checkAnswer={this.checkAnswer}
-
+      randomize={this.randomize}
+      randomized={this.props.randomized}
       showRightName={this.props.showRightName}/>
 
-      randomize={this.randomize}
-      randomized={this.props.randomized}/>
+
 
       
 
@@ -105,9 +105,7 @@ const mapStateToProps = (state) => {
   return {
       dogRandomImage: state.dogRandomImage,
       randomBreeds: state.randomBreeds,
-
-      showRightName: state.showRightName
-
+      showRightName: state.showRightName,
       randomized: state.randomized
 
   }
