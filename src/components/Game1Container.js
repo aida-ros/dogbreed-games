@@ -58,6 +58,7 @@ class Game1Container extends Component {
        setTimeout(this.getToNextStage, 2000)
     }
     
+
   }
   removeAnswer = () => {
     this.props.dispatch({
@@ -66,6 +67,18 @@ class Game1Container extends Component {
     }) 
   }
   
+  randomize = (randomBreeds, correctBreed) => {
+    console.log("randomBreeds:",randomBreeds)
+    const allOptions = randomBreeds.concat(correctBreed)
+    console.log('allOptions:', allOptions)
+    
+    if (allOptions[2] !== undefined) {
+      const randomized = allOptions.sort(() => Math.random() - 0.5)
+      
+      return console.log("RANDOMIZED ARRAY: ", randomized)
+    }
+  }
+
   render() {
    
     return (
@@ -74,7 +87,12 @@ class Game1Container extends Component {
       dogRandomImage={this.props.dogRandomImage} 
       randomBreeds={this.props.randomBreeds} 
       checkAnswer={this.checkAnswer}
+
       showRightName={this.props.showRightName}/>
+
+      randomize={this.randomize}
+      randomized={this.props.randomized}/>
+
       
 
       <ProgressBarContainer/>
@@ -87,7 +105,11 @@ const mapStateToProps = (state) => {
   return {
       dogRandomImage: state.dogRandomImage,
       randomBreeds: state.randomBreeds,
+
       showRightName: state.showRightName
+
+      randomized: state.randomized
+
   }
 }
 
