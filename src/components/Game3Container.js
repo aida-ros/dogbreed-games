@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ProgressBarContainer from './ProgressBarContainer'
 import Game2Container from './Game2Container';
 import Game1Container from './Game1Container';
 import { connect } from 'react-redux'
@@ -8,19 +7,19 @@ import { connect } from 'react-redux'
 class Game3Container extends Component {
   randomize(myArray) {
     return myArray[Math.floor(Math.random() * myArray.length)];
-}
+  }
   render() {
     let arr = [<Game2Container />, <Game1Container />]
     return (
-      <div>{this.randomize(arr)}
-        <ProgressBarContainer />
+      <div>
+        {this.randomize(arr)}
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return { 
+  return {
     questionCount: state.questionCount
   }
 }

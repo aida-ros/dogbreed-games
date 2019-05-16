@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import * as request from 'superagent'
 import { connect } from 'react-redux'
 import Game2 from './Game2'
-import ProgressBarContainer from './ProgressBarContainer'
 
 class Game2Container extends Component {
   componentDidMount() {
     this.getToNextStage()
-   
+
   }
-  
+
   someRandomNumber = () => {
     return Math.floor(Math.random() * 3)
   }
@@ -19,7 +18,7 @@ class Game2Container extends Component {
       this.props.dispatch({
         type: 'ANSWERS',
         payload: true
-      }) 
+      })
       this.componentDidMount()
     } else {
       this.props.dispatch({
@@ -29,7 +28,7 @@ class Game2Container extends Component {
       this.props.dispatch({
         type: 'SHOW_RIGHT_IMAGE',
         payload: this.props.dogThreeRandomImages[this.props.setRandomNumber]
-      })      
+      })
     }
   }
 
@@ -37,7 +36,7 @@ class Game2Container extends Component {
     request
       .get('https://dog.ceo/api/breeds/image/random/3')
       .then(response => {
-       
+
         const threeRandomDogImg = response.body.message
 
         this.props.dispatch({
@@ -45,31 +44,29 @@ class Game2Container extends Component {
           payload: threeRandomDogImg
         })
         const randomNumber = this.someRandomNumber()
-       
+
         this.props.dispatch({
           type: 'SET_RANDOM_NUMBER',
           payload: randomNumber
-         })
-         
+        })
+
       })
       .catch(console.error)
   }
 
-  render() { 
-    
+  render() {
+
     return (
       <div>
-        <Game2 
-        dogThreeRandomImages= {this.props.dogThreeRandomImages}  
-        setRandomNumber = {this.props.setRandomNumber}
-        getName = {this.getName}
-        answerGameTwo = {this.props.answerGameTwo} 
-        answers = {this.props.answers}
-        showRightImage = {this.props.showRightImage}
+        <Game2
+          dogThreeRandomImages={this.props.dogThreeRandomImages}
+          setRandomNumber={this.props.setRandomNumber}
+          getName={this.getName}
+          answerGameTwo={this.props.answerGameTwo}
+          answers={this.props.answers}
+          showRightImage={this.props.showRightImage}
         />
-      
-        <ProgressBarContainer/>
-     </div>
+      </div>
     )
   }
 }
@@ -85,5 +82,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Game2Container)
-
-
