@@ -5,8 +5,7 @@ import { Route } from 'react-router-dom'
 import DetailPageContainer from './components/DetailPageContainer';
 import Game1Container from './components/Game1Container';
 import Game2Container from './components/Game2Container'
-// import Game3Container from './components/Game3Container'
-import ProgressBarContainer from './components/ProgressBarContainer';
+import Game3Container from './components/Game3Container'
 import { Link } from 'react-router-dom'
 
 
@@ -25,7 +24,8 @@ function App() {
      <Route path="/detailpage/:breed" component={DetailPageContainer} /> 
      <Route exact path="/game1/" component={Game1Container} />
      <Route exact path="/game2/" component={Game2Container} />
-     
+     <Route exact path="/game3/" component={Game3Container} />
+
     </div>
   );
 }
