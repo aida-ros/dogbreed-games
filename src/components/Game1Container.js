@@ -34,12 +34,35 @@ class Game1Container extends Component {
     })
     .catch(console.error)
   }
+
+  checkAnswer = (event) => {
+    
+    if (event.target.name === this.props.dogRandomImage.breed){  
+      // return console.log("ANSWER WAS TRUE!")
+      return this.props.dispatch({
+        type: 'ANSWERS',
+        payload: true
+      })
+    }
+    
+    // return console.log("ANSWER WAS FALSE!")
+    return this.props.dispatch({
+      type: 'ANSWERS',
+      payload: false
+    })
+    
+    
+  }
   
   render() {
     
     return (
     <div>
-      <Game1 dogRandomImage={this.props.dogRandomImage} randomBreeds={this.props.randomBreeds}/>
+      <Game1 
+      dogRandomImage={this.props.dogRandomImage} 
+      randomBreeds={this.props.randomBreeds} 
+      checkAnswer={this.checkAnswer}/>
+      
       <ProgressBarContainer/>
     </div>
   )}

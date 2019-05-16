@@ -59,7 +59,7 @@ const reducer = (state = initialState, action) => {
         case 'ANSWERS':
             return {
                 ...state,
-                answers: action.payload
+                answers: [action.payload]
             }
         default:
             return state
