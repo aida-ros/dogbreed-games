@@ -25,6 +25,10 @@ html {
   color: #61dafb;
 }
 
+.buttonHolder {
+  display: inline-block;
+}
+
 h1 {
   font-family: 'Just Another Hand', cursive;
   color: rgb(77, 149, 83);

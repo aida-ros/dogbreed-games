@@ -23,37 +23,19 @@ export class Game1 extends Component {
         <h1>What is the breed of the image below?</h1>
         <h1 class="rightName">{showRightName}</h1>
 
-
+        <br/>
+        <img src={this.props.dogRandomImage.url} alt="random"></img>
+        <br />
         
         { dogs.map(dog => {
           return (
-              <div>
+              <div class="buttonHolder">
                 <button onClick={checkAnswer} name={dog} >
                 {dog}
                 </button>
               </div>
             )
         })}
-       
-        
-        <br/>
-        <img src={this.props.dogRandomImage.url} alt="random"></img>
-        <br />
-
-//         <button onClick={checkAnswer} id="correct" name={correctBreed} accesskey="a">
-//           {correctBreed}
-//         </button>
-
-//         <button onClick={checkAnswer} id="false" name={randomBreeds && randomBreeds[0]} accesskey="b">
-//           {randomBreeds && randomBreeds[0]}
-//         </button>
-
-//         <button onClick={checkAnswer} id="false" name={randomBreeds && randomBreeds[1]} accesskey="c">
-//           {randomBreeds && randomBreeds[1]}
-//         </button>
-
-//         <br />
-//         <span>You can also use keyboard keys a, b or c for the answers. Use ALT+a, ALT+b or ALT+c. </span>
       </div>
 
     )
