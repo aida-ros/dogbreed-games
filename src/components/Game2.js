@@ -25,7 +25,7 @@ export default class Game2 extends Component {
      
   return (
       <div>
-        <p>Which dog matches this breed </p>
+        <h2>Which dog matches this breed </h2>
         <h1>{randomImage[setRandomNumber]}</h1>  
        {allUrls}
        <div>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as request from 'superagent';
 import { connect } from 'react-redux';
 import Game1 from './Game1';
-import ProgressBarContainer from './ProgressBarContainer'
 
 class Game1Container extends Component {
   componentDidMount  ()  {
@@ -87,15 +86,9 @@ class Game1Container extends Component {
       dogRandomImage={this.props.dogRandomImage} 
       randomBreeds={this.props.randomBreeds} 
       checkAnswer={this.checkAnswer}
-
-      showRightName={this.props.showRightName}/>
-
       randomize={this.randomize}
-      randomized={this.props.randomized}/>
-
-      
-
-      <ProgressBarContainer/>
+      randomized={this.props.randomized}
+      showRightName={this.props.showRightName}/>
     </div>
   )}
 }
@@ -105,9 +98,7 @@ const mapStateToProps = (state) => {
   return {
       dogRandomImage: state.dogRandomImage,
       randomBreeds: state.randomBreeds,
-
-      showRightName: state.showRightName
-
+      showRightName: state.showRightName,
       randomized: state.randomized
 
   }
