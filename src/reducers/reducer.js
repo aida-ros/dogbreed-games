@@ -58,8 +58,7 @@ const reducer = (state = initialState, action) => {
         case 'ANSWERS':
             return {
                 ...state,
-                answers: [action.payload],
-                //answers: [...state.answers, action.payload],
+                answers: [...state.answers, action.payload],
                 questionCount: state.questionCount +1
                 
             }
