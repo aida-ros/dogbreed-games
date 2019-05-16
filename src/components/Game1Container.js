@@ -38,14 +38,14 @@ class Game1Container extends Component {
   checkAnswer = (event) => {
     
     if (event.target.name === this.props.dogRandomImage.breed){  
-      // return console.log("ANSWER WAS TRUE!")
+      console.log("ANSWER WAS TRUE!")
       return this.props.dispatch({
         type: 'ANSWERS',
         payload: true
       })
     }
     
-    // return console.log("ANSWER WAS FALSE!")
+    console.log("ANSWER WAS FALSE!")
     return this.props.dispatch({
       type: 'ANSWERS',
       payload: false
@@ -54,6 +54,18 @@ class Game1Container extends Component {
     
   }
   
+  randomize = (randomBreeds, correctBreed) => {
+    console.log("randomBreeds:",randomBreeds)
+    const allOptions = randomBreeds.concat(correctBreed)
+    console.log('allOptions:', allOptions)
+    
+    if (allOptions[2] !== undefined) {
+      const randomized = allOptions.sort(() => Math.random() - 0.5)
+      
+      return console.log("RANDOMIZED ARRAY: ", randomized)
+    }
+  }
+
   render() {
     
     return (
@@ -61,7 +73,9 @@ class Game1Container extends Component {
       <Game1 
       dogRandomImage={this.props.dogRandomImage} 
       randomBreeds={this.props.randomBreeds} 
-      checkAnswer={this.checkAnswer}/>
+      checkAnswer={this.checkAnswer}
+      randomize={this.randomize}
+      randomized={this.props.randomized}/>
       
       <ProgressBarContainer/>
     </div>
@@ -71,7 +85,8 @@ class Game1Container extends Component {
 const mapStateToProps = (state) => {
   return {
       dogRandomImage: state.dogRandomImage,
-      randomBreeds: state.randomBreeds
+      randomBreeds: state.randomBreeds,
+      randomized: state.randomized
   }
 }
 

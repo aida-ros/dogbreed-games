@@ -4,31 +4,41 @@ import * as request from 'superagent';
 import { connect } from 'react-redux';
 
 export class Game1 extends Component {
+// componentWillMount = () => {
+
+// }
 
   render() {
     const correctBreed = this.props.dogRandomImage.breed
     const { randomBreeds } = this.props
     const checkAnswer = this.props.checkAnswer
+    const randomizeOptions = this.props.randomize
 
-    console.log(checkAnswer)
+  {!randomBreeds && console.log('no')}
+  {randomBreeds && randomizeOptions(randomBreeds, correctBreed)} 
+  
+
     return (
       <div>
+
         <h1>What is the breed of the image below?</h1>
                   
           <br />
           <img src={this.props.dogRandomImage.url} alt="random"></img>   
 
-        <div>
+        
+
+        <div className='option'>
           <input onClick={checkAnswer} type="radio" id="correct" name={correctBreed} value="Option A" />
           <label for="Option A">{correctBreed}</label>
         </div>
 
-        <div>
+        <div className='option'>
           <input onClick={checkAnswer} type="radio" id="false" name={randomBreeds && randomBreeds[0]} value="Option B" />
           <label for="Option B">{randomBreeds && randomBreeds[0]}</label>
         </div>
 
-        <div>
+        <div className='option'>
           <input onClick={checkAnswer} type="radio" id="false" name={randomBreeds && randomBreeds[1]} value="Option C" />
           <label for="Option C">{randomBreeds && randomBreeds[1]}</label>
         </div>
