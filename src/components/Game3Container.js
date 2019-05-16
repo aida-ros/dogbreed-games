@@ -5,6 +5,13 @@ import { connect } from 'react-redux'
 
 
 class Game3Container extends Component {
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'RESET_ANSWERS',
+      payload: []
+    })  
+  }
+
   randomize(myArray) {
     return myArray[Math.floor(Math.random() * myArray.length)];
   }

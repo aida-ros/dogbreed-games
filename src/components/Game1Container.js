@@ -4,8 +4,12 @@ import { connect } from 'react-redux';
 import Game1 from './Game1';
 
 class Game1Container extends Component {
-  componentDidMount  ()  {
-    this.getToNextStage()
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'RESET_ANSWERS',
+      payload: []
+    }) 
+    this.getToNextStage()   
   }
   
   getToNextStage = () => { 

@@ -70,6 +70,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 showRightName: action.payload
             }
+        
+        case 'RESET_ANSWERS':
+            return {
+              ...state,
+              answers: []
+            }
         default:
             return state
 }}
