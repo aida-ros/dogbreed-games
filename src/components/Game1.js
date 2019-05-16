@@ -9,19 +9,27 @@ export class Game1 extends Component {
 // }
 
   render() {
+    
     const correctBreed = this.props.dogRandomImage.breed
     const { randomBreeds } = this.props
     const checkAnswer = this.props.checkAnswer
+
+    const showRightName = this.props.showRightName
+    //console.log('MIAAUW',showRightName)
+   
+
     const randomizeOptions = this.props.randomize
 
   {!randomBreeds && console.log('no')}
   {randomBreeds && randomizeOptions(randomBreeds, correctBreed)} 
   
 
+
     return (
       <div>
 
         <h1>What is the breed of the image below?</h1>
+        <h1>{showRightName}</h1>
                   
           <br />
           <img src={this.props.dogRandomImage.url} alt="random"></img>   
@@ -30,17 +38,17 @@ export class Game1 extends Component {
 
         <div className='option'>
           <input onClick={checkAnswer} type="radio" id="correct" name={correctBreed} value="Option A" />
-          <label for="Option A">{correctBreed}</label>
+          <label >{correctBreed}</label>
         </div>
 
         <div className='option'>
           <input onClick={checkAnswer} type="radio" id="false" name={randomBreeds && randomBreeds[0]} value="Option B" />
-          <label for="Option B">{randomBreeds && randomBreeds[0]}</label>
+          <label>{randomBreeds && randomBreeds[0]}</label>
         </div>
 
         <div className='option'>
           <input onClick={checkAnswer} type="radio" id="false" name={randomBreeds && randomBreeds[1]} value="Option C" />
-          <label for="Option C">{randomBreeds && randomBreeds[1]}</label>
+          <label >{randomBreeds && randomBreeds[1]}</label>
         </div>
         <br />
 
