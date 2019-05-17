@@ -28,7 +28,6 @@ html {
 
 .buttonHolder {
   display: inline-block;
-  
 }
 
 h1 {
@@ -70,21 +69,6 @@ button:hover {
   border: 1px solid rgb(24, 104, 104);
 }
 
-/* button:active {
-  color: #ffffff;
-  background-color: rgb(97, 199, 230);
-  border: 1px solid rgb(24, 104, 104);
-}
-
-button:focus {
-  color: #ffffff;
-  background-color: rgb(97, 199, 230);
-  border: 1px solid rgb(24, 104, 104);
-} */
-
-
-
-
 button.home {
   color: #ffffff;
   background-color: #282c34;
@@ -98,4 +82,3 @@ button.home:hover {
 .rightName {
   color: rgb(97, 199, 230);
 }
-
