@@ -9,10 +9,8 @@ export class Game1 extends Component {
     const { randomBreeds } = this.props
 
     if (randomBreeds === undefined) return 'Loading'
-
     const correctBreed = this.props.dogRandomImage.breed
     const showRightName = this.props.showRightName
-    const checkAnswer = this.props.checkAnswer
     const dogs = [...randomBreeds, correctBreed].sort(() => Math.random() - 0.5)
     const letters = ['A', 'B', 'C']
     const checkAnswer = this.props.checkAnswer
@@ -26,15 +24,20 @@ export class Game1 extends Component {
 
         {dogs.map((dog, index) => {
           const letter = letters[index]
+          
           return (
             <div class="button-holder">
               <button className="game-button"
                 onClick={checkAnswer}
                 name={dog}
                 accesskey={letter}
+                
               >
+
                 {letter}: {dog}
+
               </button>
+              
             </div>
           )
         })}

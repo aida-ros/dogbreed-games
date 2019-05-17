@@ -9,7 +9,7 @@ export default class Game2 extends Component {
     const randomImage = this.props.dogThreeRandomImages.map(url => url.split('/')[4])
     const getName = this.props.getName
     const showRightImage = this.props.showRightImage
-    const letters = ['A', 'B', 'C']
+    const letters = ['A', 'B', 'C', 'D', 'E']
     
     
     const allUrls = dogThreeRandomImages
