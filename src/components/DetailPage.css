@@ -3,6 +3,7 @@ img {
     max-height: 500px;
     padding: 10px;
     margin: auto;
+    cursor: pointer;
 }
 
 .index {

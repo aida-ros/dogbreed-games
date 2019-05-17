@@ -8,8 +8,8 @@ class Game2Container extends Component {
     this.props.dispatch({
       type: 'RESET_ANSWERS',
       payload: []
-    }) 
-    this.getToNextStage()   
+    })
+    this.getToNextStage()
   }
 
   someRandomNumber = () => {
@@ -21,7 +21,7 @@ class Game2Container extends Component {
       this.props.dispatch({
         type: 'ANSWERS',
         payload: true
-      }) 
+      })
       this.getToNextStage()
 
     } else {
@@ -34,15 +34,15 @@ class Game2Container extends Component {
         payload: this.props.dogThreeRandomImages[this.props.setRandomNumber]
       })
 
-      setTimeout(this.removeAnswer, 2000)  
-      setTimeout(this.getToNextStage, 2000)     
+      setTimeout(this.removeAnswer, 2000)
+      setTimeout(this.getToNextStage, 2000)
     }
   }
   removeAnswer = () => {
     this.props.dispatch({
       type: 'SHOW_RIGHT_IMAGE',
       payload: []
-    }) 
+    })
   }
   getToNextStage = () => {
     request
