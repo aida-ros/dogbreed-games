@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import * as request from 'superagent'
-import { connect } from 'react-redux'
-import Game2 from './Game2'
-import ProgressBarContainer from './ProgressBarContainer'
+import React, { Component } from 'react';
+import * as request from 'superagent';
+import { connect } from 'react-redux';
+import Game2 from './Game2';
+import ProgressBarContainer from './ProgressBarContainer';
 
 class Game2Container extends Component {
   componentDidMount() {
@@ -33,12 +33,9 @@ class Game2Container extends Component {
       this.props.dispatch({
         type: 'SHOW_RIGHT_IMAGE',
         payload: <div style={{ backgroundcolor: 'blue' }} >
-           <p>The answer is:</p>
-          <img style={{ width: '200px' }}src={ this.props.dogThreeRandomImages[this.props.setRandomNumber]}/>
+          <p>The answer is:</p>
+          <img style={{ width: '200px' }} src={this.props.dogThreeRandomImages[this.props.setRandomNumber]} />
         </div>
-         
-        
-       
       })
 
       setTimeout(this.removeAnswer, 2000)
@@ -87,7 +84,7 @@ class Game2Container extends Component {
           answers={this.props.answers}
           showRightImage={this.props.showRightImage}
         />
-        <ProgressBarContainer answers={this.answers}/>
+        <ProgressBarContainer answers={this.answers} />
       </div>
     )
   }
