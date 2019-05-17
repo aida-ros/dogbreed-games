@@ -56,7 +56,11 @@ class Game1Container extends Component {
       })
        this.props.dispatch({
         type: 'SHOW_RIGHT_NAME',
-        payload: this.props.dogRandomImage.breed
+        payload: 
+        <div  >
+           <p>The answer is:</p>
+           <h1 class="rightName">{this.props.dogRandomImage.breed}</h1>
+        </div>
        })      
        setTimeout(this.removeAnswer, 2000) 
        setTimeout(this.getToNextStage, 2000)

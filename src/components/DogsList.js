@@ -6,7 +6,7 @@ export default class DogsList extends Component {
   render() {
     
     const dogBreeds = this.props.dogBreeds 
-    // console.log('dogBreeds:', dogBreeds)
+    
     return (
       <div className="dogslist-container">
         <h1 className="dogslist-header">Dog Breeds</h1>

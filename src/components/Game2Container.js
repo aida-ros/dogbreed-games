@@ -32,13 +32,10 @@ class Game2Container extends Component {
       })
       this.props.dispatch({
         type: 'SHOW_RIGHT_IMAGE',
-        payload: <div style={{ backgroundcolor: 'blue' }} >
+        payload: <div  >
            <p>The answer is:</p>
-          <img style={{ width: '200px' }}src={ this.props.dogThreeRandomImages[this.props.setRandomNumber]}/>
+          <img style={{ width: '100px' }}src={ this.props.dogThreeRandomImages[this.props.setRandomNumber]}/>
         </div>
-         
-        
-       
       })
 
       setTimeout(this.removeAnswer, 2000)

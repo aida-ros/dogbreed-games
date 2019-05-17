@@ -9,7 +9,7 @@ export class Game1 extends Component {
 
     if (randomBreeds === undefined) return 'Loading'
 
-
+    const checkAnswer = this.props.checkAnswer
     const correctBreed = this.props.dogRandomImage.breed
     const showRightName = this.props.showRightName
     const dogs = [...randomBreeds, correctBreed].sort(() => Math.random() - 0.5)
@@ -20,7 +20,7 @@ export class Game1 extends Component {
       <div>
 
         <h1>What is the breed of the image below?</h1>
-        <h1 class="rightName">{showRightName}</h1>
+        
 
 
         <br />
@@ -42,8 +42,14 @@ export class Game1 extends Component {
           )
         })}
         <br />
-        <span>You can also use keyboard keys with the corresponding letter.</span>
-        <span>For Windows use: alt + letter, for Mac use ctrl + option + letter.</span>
+        {showRightName}
+        <div>
+        <p style={{ fontSize: '17px', lineHeight: '10px'}}>You can also use keyboard keys with the corresponding letter</p>
+        <p style={{ fontSize: '15px', lineHeight: '10px'}} >Windows : alt + letter</p>
+        <p style={{ fontSize: '15px', lineHeight: '10px'}}>Mac use : ctrl + option + letter</p>
+        </div>
+       
+        
 
       </div>
     )
