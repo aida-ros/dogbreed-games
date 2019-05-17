@@ -1,5 +1,6 @@
 html {
-  background-image: url(https://images.fineartamerica.com/images-medium-large-5/dog-paw-cat-paw-puppy-kitten-vector-seamless-pattern-wallpaper-background-cnuisin.jpg)
+  background-image: url(https://images.fineartamerica.com/images-medium-large-5/dog-paw-cat-paw-puppy-kitten-vector-seamless-pattern-wallpaper-background-cnuisin.jpg);
+  padding: 50px;
 }
 
 .App {

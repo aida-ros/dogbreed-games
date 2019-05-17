@@ -4,6 +4,7 @@ import Game1Container from './Game1Container';
 import { connect } from 'react-redux'
 
 
+
 class Game3Container extends Component {
   // componentDidMount() {
   //   this.props.dispatch({
@@ -21,6 +22,7 @@ class Game3Container extends Component {
       <div>
         {this.randomize(arr)}
       </div>
+      
     )
   }
 }
