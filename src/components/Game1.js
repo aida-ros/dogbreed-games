@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './Game.css'
 
 export class Game1 extends Component {
 
@@ -11,7 +12,6 @@ export class Game1 extends Component {
 
     const correctBreed = this.props.dogRandomImage.breed
     const showRightName = this.props.showRightName
-    const checkAnswer = this.props.checkAnswer
     const dogs = [...randomBreeds, correctBreed].sort(() => Math.random() - 0.5)
     const letters = ['A', 'B', 'C']
 
@@ -25,8 +25,8 @@ export class Game1 extends Component {
         {dogs.map((dog, index) => {
           const letter = letters[index]
           return (
-            <div class="buttonHolder">
-              <button
+            <div class="button-holder">
+              <button className="game-button"
                 onClick={checkAnswer}
                 name={dog}
                 accesskey={letter}

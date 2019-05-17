@@ -13,11 +13,12 @@ function App() {
 
   return (
     <div className="App">
-      
+      <div className="buttons-container">
       <Link to="/"><button className="home">HOME</button></Link>
       <Link to="/Game1/"><button className="game-one">GAME 1</button></Link>
       <Link to="/Game2/"><button className="game-two">GAME 2</button></Link>
       <Link to="/Game3/"><button className="game-three">GAME 3</button></Link>
+    </div>
 
       <Route exact path="/" component={DogsListContainer} />
       <Route exact path="/" component={AboutGame} />

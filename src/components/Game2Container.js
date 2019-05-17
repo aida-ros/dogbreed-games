@@ -77,6 +77,7 @@ class Game2Container extends Component {
 
     return (
       <div>
+        <ProgressBarContainer answers={this.answers} />
         <Game2
           dogThreeRandomImages={this.props.dogThreeRandomImages}
           setRandomNumber={this.props.setRandomNumber}
@@ -85,7 +86,7 @@ class Game2Container extends Component {
           answers={this.props.answers}
           showRightImage={this.props.showRightImage}
         />
-        <ProgressBarContainer answers={this.answers} />
+        
       </div>
     )
   }

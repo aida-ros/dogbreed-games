@@ -13,7 +13,7 @@
 
 .dogslist-header {
     margin-left: 5px;
-    font-family: 'Just Another Hand', cursive;
+    font-family: 'Quicksand', sans-serif;
     letter-spacing: 1px;
     font-size: 60px;
 }
@@ -40,6 +40,10 @@ a {
     color: rgb(36, 36, 36);
 }
 
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+
 .game-link {
   color: #8cb962;
 }
@@ -59,6 +63,5 @@ a {
   justify-content: center;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
-@import url('https://fonts.googleapis.com/css?family=Exo+2');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
