@@ -64,7 +64,7 @@ class Game1Container extends Component {
        })      
        setTimeout(this.removeAnswer, 2000) 
        setTimeout(this.getToNextStage, 2000)
-
+      }
 
   }
   removeAnswer = () => {
@@ -85,8 +85,6 @@ class Game1Container extends Component {
           showRightName={this.props.showRightName}
           randomize={this.randomize}
           randomized={this.props.randomized} />
-
-        
       </div>
     )
   }
