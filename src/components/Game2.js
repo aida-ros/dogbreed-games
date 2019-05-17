@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './Game.css';
 
 export default class Game2 extends Component {
@@ -31,13 +31,13 @@ export default class Game2 extends Component {
       
     return (
       <div>
-        
         <h2>Which dog matches this breed </h2>
         <h1>{randomImage[setRandomNumber]}</h1>  
         {allUrls}
         <div style={{ margin: 'auto', width: '200px' }} >
           {showRightImage}
         </div>
+
         <div>
         <p style={{ fontSize: '17px', lineHeight: '10px'}}>You can also use keyboard keys with the corresponding letter</p>
         <p style={{ fontSize: '15px', lineHeight: '10px'}} >Windows : alt + letter</p>
@@ -45,6 +45,9 @@ export default class Game2 extends Component {
         </div>  
       
       </div>   
+
+    
+
     )
   }
 }

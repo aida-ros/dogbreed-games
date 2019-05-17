@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import DetailPage from './DetailPage'
-import * as request from 'superagent'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import DetailPage from './DetailPage';
+import * as request from 'superagent';
+import { connect } from 'react-redux';
 
 class DetailPageContainer extends Component {
     state = { images: null }
