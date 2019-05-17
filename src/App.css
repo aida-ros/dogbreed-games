@@ -5,11 +5,15 @@ html {
 
 .App {
   margin: 0 auto;
+  padding: 30px;
   position: relative;
   text-align: center;
-  min-height: 949px;
+  min-height: auto;
   background-color: rgba(255, 255, 255, 0.8);
-  max-width: 980px;
+  border: 3px solid rgb(221, 221, 221);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start
 }
 
 .App-header {
@@ -48,11 +52,15 @@ a:hover{
   color: #ffffff;
 }
 
+.main-container {
+  padding: 50px;
+}
+
 .buttons-container {
-  margin-left: -30px;
   background-color: rgb(216, 216, 216);
   width: 170px;
   height: 300px;
+  padding: 10px;
   border-radius: 40px;
   border: 2px solid rgba(138, 138, 138, 0.301)
 }
@@ -64,8 +72,7 @@ button {
   border-radius: 80px;
   border: 1px solid rgb(77, 149, 83);
   padding: 15px;
-  margin: 0px;
-  margin-top: 20px;
+  margin: 12px;
   outline: none;
   font-size: 15px;
 }

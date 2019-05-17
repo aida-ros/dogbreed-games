@@ -43,7 +43,7 @@ class Game1Container extends Component {
   }
 
   checkAnswer = (event) => {
-    console.log("MIAAU",event.target)
+
     if (event.target.name === this.props.dogRandomImage.breed) {
       this.props.dispatch({
         type: 'ANSWERS',
@@ -66,7 +66,10 @@ class Game1Container extends Component {
        setTimeout(this.removeAnswer, 2000) 
        setTimeout(this.getToNextStage, 2000)
       }
-}
+
+
+  }
+
   removeAnswer = () => {
     this.props.dispatch({
       type: 'SHOW_RIGHT_NAME',
@@ -85,8 +88,6 @@ class Game1Container extends Component {
           showRightName={this.props.showRightName}
           randomize={this.randomize}
           randomized={this.props.randomized} />
-
-        
       </div>
     )
   }

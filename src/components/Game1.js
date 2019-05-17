@@ -9,16 +9,15 @@ export class Game1 extends Component {
     const { randomBreeds } = this.props
 
     if (randomBreeds === undefined) return 'Loading'
-    const checkAnswer = this.props.checkAnswer
     const correctBreed = this.props.dogRandomImage.breed
     const showRightName = this.props.showRightName
     const dogs = [...randomBreeds, correctBreed].sort(() => Math.random() - 0.5)
     const letters = ['A', 'B', 'C']
-    
-   
+    const checkAnswer = this.props.checkAnswer
+
     return (
       <div>
-        <h1>What is the breed of the image below?</h1>
+        <h2>What is the breed of the image below?</h2>
         <br />
         <img src={this.props.dogRandomImage.url} alt="random"></img>
         <br />
@@ -34,7 +33,9 @@ export class Game1 extends Component {
                 accesskey={letter}
                 
               >
-              {letter}: {dog}
+
+                {letter}: {dog}
+
               </button>
               
             </div>

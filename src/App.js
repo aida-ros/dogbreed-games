@@ -19,16 +19,18 @@ function App() {
       <Link to="/Game2/"><button className="game-two">GAME 2</button></Link>
       <Link to="/Game3/"><button className="game-three">GAME 3</button></Link>
     </div>
-
-      <Route exact path="/" component={DogsListContainer} />
+    <div className="landing-container">
       <Route exact path="/" component={AboutGame} />
+      <Route exact path="/" component={DogsListContainer} />
+      </div>
+    <div className='main-container'>
 
       <Route path="/detailpage/:breed" component={DetailPageContainer} />
 
       <Route exact path="/game1/" component={Game1Container} />
       <Route exact path="/game2/" component={Game2Container} />  
       <Route exact path="/game3/" component={Game3Container} />
-
+      </div>
     </div>
   );
 }
