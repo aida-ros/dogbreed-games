@@ -86,8 +86,6 @@ class Game1Container extends Component {
           showRightName={this.props.showRightName}
           randomize={this.randomize}
           randomized={this.props.randomized} />
-
-        
       </div>
     )
   }
