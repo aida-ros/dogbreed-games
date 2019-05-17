@@ -14,7 +14,6 @@ export class Game1 extends Component {
     const checkAnswer = this.props.checkAnswer
     const dogs = [...randomBreeds, correctBreed].sort(() => Math.random() - 0.5)
     const letters = ['A', 'B', 'C']
-    const checkAnswer = this.props.checkAnswer
 
     return (
       <div>

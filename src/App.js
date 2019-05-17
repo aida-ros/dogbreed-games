@@ -7,6 +7,7 @@ import Game1Container from './components/Game1Container';
 import Game2Container from './components/Game2Container';
 import Game3Container from './components/Game3Container';
 import { Link } from 'react-router-dom';
+import AboutGame from './components/AboutGame';
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
       <Link to="/Game3/"><button className="game-three">GAME 3</button></Link>
 
       <Route exact path="/" component={DogsListContainer} />
+      <Route exact path="/" component={AboutGame} />
+
       <Route path="/detailpage/:breed" component={DetailPageContainer} />
 
       <Route exact path="/game1/" component={Game1Container} />
