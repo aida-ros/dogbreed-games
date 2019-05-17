@@ -1,0 +1,15 @@
+.image-block {
+    
+    display: inline-block;
+    overflow: hidden;  
+    height: 200px;
+    }
+
+.answer-block {
+  background-color: rgb(169, 198, 223);
+  margin: 'auto';
+  width: '300px' ;
+
+}
+  
+ 

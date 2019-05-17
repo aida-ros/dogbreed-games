@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 export class Game1 extends Component {
-
+  
   render() {
 
     const { randomBreeds } = this.props
@@ -11,11 +11,11 @@ export class Game1 extends Component {
     
 
     const correctBreed = this.props.dogRandomImage.breed
-    const checkAnswer = this.props.checkAnswer
     const showRightName = this.props.showRightName
 
   
-    const dogs = [...randomBreeds, correctBreed].sort(() => Math.random() - 0.5)
+  
+
 
     return (
       <div>
@@ -24,18 +24,14 @@ export class Game1 extends Component {
         <h1 class="rightName">{showRightName}</h1>
 
         <br/>
-        <img src={this.props.dogRandomImage.url} alt="random"></img>
-        <br />
-        
-        { dogs.map(dog => {
-          return (
-              <div class="buttonHolder">
-                <button onClick={checkAnswer} name={dog} >
-                {dog}
-                </button>
-              </div>
-            )
-        })}
+
+        <img
+          style={{ width: '400px' }}
+          src={this.props.dogRandomImage.url}
+          alt="random"
+        />
+       <br />  
+      
       </div>
 
     )
