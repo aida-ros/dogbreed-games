@@ -73,7 +73,7 @@ class Game1Container extends Component {
  
 
   render() {
-   //console.log("BARK",this.props.randomBreeds)
+
     return (
     <div>
       <Game1 
@@ -90,7 +90,7 @@ class Game1Container extends Component {
 }
 
 const mapStateToProps = (state) => {
-  //console.log("WOEF",state.showRightName)
+
   return {
       dogRandomImage: state.dogRandomImage,
       randomBreeds: state.randomBreeds,

@@ -32,7 +32,13 @@ class Game2Container extends Component {
       })
       this.props.dispatch({
         type: 'SHOW_RIGHT_IMAGE',
-        payload: this.props.dogThreeRandomImages[this.props.setRandomNumber]
+        payload: <div style={{ backgroundcolor: 'blue' }} >
+           <p>The answer is:</p>
+          <img style={{ width: '200px' }}src={ this.props.dogThreeRandomImages[this.props.setRandomNumber]}/>
+        </div>
+         
+        
+       
       })
 
       setTimeout(this.removeAnswer, 2000)
@@ -88,7 +94,6 @@ class Game2Container extends Component {
 }
 
 const mapStateToProps = (state) => {
-  
   return {
     dogThreeRandomImages: state.dogThreeRandomImages,
     setRandomNumber: state.setRandomNumber,

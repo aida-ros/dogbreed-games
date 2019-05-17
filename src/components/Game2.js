@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Game.css';
 
 export default class Game2 extends Component {
 
@@ -24,13 +25,13 @@ export default class Game2 extends Component {
       
     return (
       <div>
-        <h2>Which dog matches this breed?</h2>
-        <h1>{randomImage[setRandomNumber]}</h1>
+        
+        <h2>Which dog matches this breed </h2>
+        <h1>{randomImage[setRandomNumber]}</h1>  
         {allUrls}
-        <div>
-        </div>
-        <img style={{ width: '100px' }} src={showRightImage} />
-      </div>
+        <div style={{ margin: 'auto', width: '300px' }} >
+          {showRightImage}
+        </div>     
     )
   }
 }
