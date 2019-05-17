@@ -3,18 +3,35 @@ import ProgressBar from './ProgressBar';
 import { connect } from 'react-redux';
 
 export class ProgressBarContainer extends Component {
-    
+       
+    successRate = (correct, total) => {
+        if (total === []) {
+            return 0
+        }
+        return (correct.length / total.length) * 100
+    }     
+
     render () {
-        const successRate = (this.props.correct / this.props.answers) * 100
-        //console.log("RENDER IN CONTAINER:", successRate, '%')
+        // console.log("ANSWERS: ", this.props.answers)
+        const total = this.props.answers
+        const correct = total.filter(answer => {
+            if (answer === true) {
+                return answer
+            }
+        })
+        // console.log("CORRECT ANSWERS: ", correct.length)
+    
+        const percentage = this.successRate(correct, total)        
+        // console.log("PERCENTAGE: ", percentage)
+
         return (
-        <ProgressBar percentage={this.successRate}/>
+        <ProgressBar percentage={percentage}/>
          )
     }
 }
 
 const mapStateToProps = (state) => {
-    //console.log("PROGRESS STATE:", state.answers)
+    
     return {
         answers: state.answers
     }

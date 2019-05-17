@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 import * as request from 'superagent'
 import { connect } from 'react-redux'
 import Game2 from './Game2'
+import ProgressBarContainer from './ProgressBarContainer'
 
 class Game2Container extends Component {
   componentDidMount() {
     this.props.dispatch({
       type: 'RESET_ANSWERS',
       payload: []
-    }) 
-    this.getToNextStage()   
+    })
+    this.getToNextStage()
   }
 
   someRandomNumber = () => {
@@ -21,7 +22,7 @@ class Game2Container extends Component {
       this.props.dispatch({
         type: 'ANSWERS',
         payload: true
-      }) 
+      })
       this.getToNextStage()
 
     } else {
@@ -40,16 +41,18 @@ class Game2Container extends Component {
        
       })
 
-      setTimeout(this.removeAnswer, 2000)  
-      setTimeout(this.getToNextStage, 2000)     
+      setTimeout(this.removeAnswer, 2000)
+      setTimeout(this.getToNextStage, 2000)
     }
   }
+
   removeAnswer = () => {
     this.props.dispatch({
       type: 'SHOW_RIGHT_IMAGE',
       payload: []
-    }) 
+    })
   }
+
   getToNextStage = () => {
     request
       .get('https://dog.ceo/api/breeds/image/random/3')
@@ -84,13 +87,13 @@ class Game2Container extends Component {
           answers={this.props.answers}
           showRightImage={this.props.showRightImage}
         />
+        <ProgressBarContainer answers={this.answers}/>
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
- 
   return {
     dogThreeRandomImages: state.dogThreeRandomImages,
     setRandomNumber: state.setRandomNumber,

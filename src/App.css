@@ -1,5 +1,6 @@
 html {
-  background-image: url(https://images.fineartamerica.com/images-medium-large-5/dog-paw-cat-paw-puppy-kitten-vector-seamless-pattern-wallpaper-background-cnuisin.jpg)
+  background-image: url(https://images.fineartamerica.com/images-medium-large-5/dog-paw-cat-paw-puppy-kitten-vector-seamless-pattern-wallpaper-background-cnuisin.jpg);
+  padding: 50px;
 }
 
 .App {
@@ -37,6 +38,10 @@ h1 {
   font-size: 60px;
 }
 
+h3 {
+  font-weight: 300;
+}
+
 label, p, a {
   line-height: 30px;
   font-family: 'Exo 2', sans-serif;
@@ -48,7 +53,7 @@ a:hover{
 }
 
 button {
-  width: 150px;
+  width: 175px;
   height: 80px;
   background-color: rgb(87, 218, 152);
   border-radius: 80px;
