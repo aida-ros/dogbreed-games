@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './DetailPage.css'
+import React, { Component } from 'react';
+import './DetailPage.css';
 
 export default class Detailpage extends Component {
 

@@ -1,17 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Game2Container from './Game2Container';
 import Game1Container from './Game1Container';
-import { connect } from 'react-redux'
-
-
+import { connect } from 'react-redux';
 
 class Game3Container extends Component {
-  // componentDidMount() {
-  //   this.props.dispatch({
-  //     type: 'RESET_ANSWERS',
-  //     payload: []
-  //   })  
-  // }
 
   randomize(myArray) {
     return myArray[Math.floor(Math.random() * myArray.length)];
@@ -22,7 +14,7 @@ class Game3Container extends Component {
       <div>
         {this.randomize(arr)}
       </div>
-      
+    
     )
   }
 }
