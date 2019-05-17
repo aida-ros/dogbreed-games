@@ -30,8 +30,8 @@ export default class Game2 extends Component {
       
       
     return (
-      <div>
-        <h2>Which dog matches this breed </h2>
+      <div className='game-2-container'>
+        <h2>Which dog matches this breed? </h2>
         <h1>{randomImage[setRandomNumber]}</h1>  
         {allUrls}
         <div style={{ margin: 'auto', width: '200px' }} >

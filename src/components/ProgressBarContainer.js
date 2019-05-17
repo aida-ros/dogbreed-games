@@ -12,17 +12,13 @@ export class ProgressBarContainer extends Component {
     }     
 
     render () {
-        console.log("ANSWERS: ", this.props.answers, isNaN(this.props.answers))
         const total = this.props.answers
         const correct = total.filter(answer => {
             if (answer === true) {
                 return answer
             }
-        })
-        console.log("CORRECT ANSWERS: ", correct.length)
-    
+        })    
         const percentage = this.successRate(correct, total)        
-        console.log("PERCENTAGE: ", percentage)
 
         return (
         <ProgressBar percentage={percentage}/>
