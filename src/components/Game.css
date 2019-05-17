@@ -11,5 +11,14 @@
   width: '300px' ;
 
 }
-  
- 
+
+.button-holder {
+  width: auto;
+  font-size: 10px;
+}
+
+.game-button {
+  width: auto;
+  text-align: center;
+  line-height: 1px;
+}
