@@ -11,9 +11,10 @@ import { ProgressBarContainer } from './components/ProgressBarContainer';
 
 
 function App() {
+
   return (
     <div className="App">
-
+      
       <Link to="/"><button className="home">HOME</button></Link>
       <Link to="/Game1/"><button className="game-one">GAME 1</button></Link>
       <Link to="/Game2/"><button className="game-two">GAME 2</button></Link>
@@ -23,13 +24,13 @@ function App() {
       <Route path="/detailpage/:breed" component={DetailPageContainer} />
 
       <Route exact path="/game1/" component={Game1Container} />
-      <Route exact path="/game1/" component={ProgressBarContainer} />
+      {/* <Route exact path="/game1/" component={ProgressBarContainer} /> */}
 
       <Route exact path="/game2/" component={Game2Container} />
-      <Route exact path="/game2/" component={ProgressBarContainer} />
+      {/* <Route exact path="/game2/" component={ProgressBarContainer} /> */}
       
       <Route exact path="/game3/" component={Game3Container} />
-      <Route exact path="/game3/" component={ProgressBarContainer} />
+      {/* <Route exact path="/game3/" component={ProgressBarContainer} /> */}
 
     </div>
   );
