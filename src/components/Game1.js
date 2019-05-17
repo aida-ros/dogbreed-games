@@ -12,6 +12,7 @@ export class Game1 extends Component {
 
     const correctBreed = this.props.dogRandomImage.breed
     const showRightName = this.props.showRightName
+    const checkAnswer = this.props.checkAnswer
     const dogs = [...randomBreeds, correctBreed].sort(() => Math.random() - 0.5)
     const letters = ['A', 'B', 'C']
 

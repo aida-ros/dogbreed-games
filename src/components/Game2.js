@@ -31,7 +31,8 @@ export default class Game2 extends Component {
         {allUrls}
         <div style={{ margin: 'auto', width: '300px' }} >
           {showRightImage}
-        </div>     
+        </div>
+      </div>
     )
   }
 }
