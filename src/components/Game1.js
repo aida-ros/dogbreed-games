@@ -14,14 +14,10 @@ export class Game1 extends Component {
     const checkAnswer = this.props.checkAnswer
     const dogs = [...randomBreeds, correctBreed].sort(() => Math.random() - 0.5)
     const letters = ['A', 'B', 'C']
- 
 
     return (
       <div>
         <h1>What is the breed of the image below?</h1>
-
-   
-
         <br />
         <img src={this.props.dogRandomImage.url} alt="random"></img>
         <br />
@@ -48,10 +44,6 @@ export class Game1 extends Component {
         <p style={{ fontSize: '15px', lineHeight: '10px'}} >Windows : alt + letter</p>
         <p style={{ fontSize: '15px', lineHeight: '10px'}}>Mac use : ctrl + option + letter</p>
         </div>
-       
-        
-
-
       </div>
     )
   }
