@@ -1,14 +1,14 @@
-/* CSS for landing page, e.g. DogsList, AboutGame etc.*/
+/* CSS for landing page, e.g. DogsList, AboutGame etc. */
 
 .dogslist-container {
-    float: left;
     background-color: #b7e48d;
     max-width: 230px;
     padding: 15px;
     margin: auto;
     margin-top: 25px;
-    border-radius: 40px;
+    margin-left: 260px;
     border: 2px solid #8cb962;
+    border-radius: 60px;
     justify-content: center;
 }
 
@@ -54,15 +54,15 @@ a {
 }
 
 .about-container {
-  float: right;
   background-color: #b7e48d;
   max-width: 650px;
   padding: 15px;
   margin: auto;
-  margin-top: 25px;
-  border-radius: 40px;
+  height: 500px;
   border: 2px solid #8cb962;
+  border-radius: 60px;
   justify-content: center;
+  margin-left: 70px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');

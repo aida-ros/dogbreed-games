@@ -8,16 +8,25 @@
   background-color: rgb(169, 198, 223);
   margin: 'auto';
   width: '300px' ;
-
 }
 
 .button-holder {
   width: auto;
-  font-size: 10px;
+  display: inline-block;
+  max-width: 730px;
+  margin-left: 80px;
 }
 
 .game-button {
   width: auto;
   text-align: center;
-  line-height: 1px;
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+.game-2-container {
+  width: auto;
+  display: inline-block;
+  max-width: 730px;
+  margin-left: 80px;
 }

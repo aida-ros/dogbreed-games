@@ -43,6 +43,7 @@ class Game1Container extends Component {
   }
 
   checkAnswer = (event) => {
+    console.log("EVENT:", event.target)
     if (event.target.name === this.props.dogRandomImage.breed) {
       this.props.dispatch({
         type: 'ANSWERS',
