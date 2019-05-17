@@ -43,6 +43,7 @@ class Game1Container extends Component {
   }
 
   checkAnswer = (event) => {
+    console.log("MIAAU",event.target)
     if (event.target.name === this.props.dogRandomImage.breed) {
       this.props.dispatch({
         type: 'ANSWERS',
@@ -64,9 +65,8 @@ class Game1Container extends Component {
        })      
        setTimeout(this.removeAnswer, 2000) 
        setTimeout(this.getToNextStage, 2000)
-
-
-  }
+      }
+}
   removeAnswer = () => {
     this.props.dispatch({
       type: 'SHOW_RIGHT_NAME',
@@ -102,3 +102,8 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Game1Container)
+
+
+
+
+
