@@ -1,19 +1,20 @@
-What this project is about
+## What this project is about
 This was a group assignment in week 4 of Codaisseur. It is a React/Redux project for a simple but fun quiz about dog breeds. 
 
-Technologies used
+## Technologies used
 - React
 - Redux
 - Redux-thunk
 
-Goals for this project:
+## Goals for this project:
 - To practice developing in a group
 - To work with git and GitHub in a group
 - To implement an app with React and Redux
 
-Requirements: Build a dog breed memorization game. You'll be using a free public API called Dog API. The webapp must be built using React and Redux.
+## Requirements: 
+Build a dog breed memorization game. You'll be using a free public API called Dog API. The webapp must be built using React and Redux.
 
-Features: 
+## Features: 
 - Game 1 shows the user a random picture of a dog (using the API), and it must ask the user to choose the correct breed name from a list of 3 options.
 - Game 2 shows the user must select the correct image that matches the breed name.
 - Game 3 is a combination of game 1 and game 2, where the user randomly gets a question type of game 1 or game 2.
