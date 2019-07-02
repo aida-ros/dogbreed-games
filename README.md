@@ -1,3 +1,38 @@
+What this project is about
+This was a group assignment in week 4 of Codaisseur. It is a React/Redux project for a simple but fun quiz about dog breeds. 
+
+Technologies used
+- React
+- Redux
+- Redux-thunk
+
+Goals for this project:
+- To practice developing in a group
+- To work with git and GitHub in a group
+- To implement an app with React and Redux
+
+Requirements: Build a dog breed memorization game. You'll be using a free public API called Dog API. The webapp must be built using React and Redux.
+
+Features: 
+- Game 1 shows the user a random picture of a dog (using the API), and it must ask the user to choose the correct breed name from a list of 3 options.
+- Game 2 shows the user must select the correct image that matches the breed name.
+- Game 3 is a combination of game 1 and game 2, where the user randomly gets a question type of game 1 or game 2.
+- When a user makes the correct choice, they proceed to the next question.
+- If the user makes the wrong choice, the game should show them the right answer, then pause for 2 seconds before proceeding to the next question.
+- The game keeps track of the user's performance and displays the success rate (in percentages) on the page.
+- The user is also able to use the keyboard to select their answer for quicker gameplay.
+- The game starts off with only 3 breeds and should gradually increase in difficulty. When the user has a streak of 5 correct answers, the game will add another 3 breeds into the mix. 
+
+Check out my Trello board here: https://trello.com/b/3NPftJY0/codaisseur
+
+## Contributors
+This continuous testing project was developed by 
+- [Andrea Van Liere](https://github.com/ajvanliere)
+- [Aida Ros](https://github.com/aida-ros)
+- [Brigitte Hennequin](https://github.com/QuinB6248)
+
+-------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
